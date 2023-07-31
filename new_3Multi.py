@@ -98,7 +98,12 @@ if __name__ == '__main__':
     # Whis()
     h1 = threading.Thread(name="REC_A", target=REC_A)
     h2 = threading.Thread(name="Whisper", target=Whis)
+    
     h1.start()
     h2.start()
+
+    h1.join()
+    h2.join()
+    
     print("Presione una tecla para continuar...")
     msvcrt.getch()
