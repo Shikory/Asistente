@@ -1,11 +1,11 @@
-import threading
+import threading # para usar varios hilos al mismo tiempo
 import datetime  # usar hora y fecha
 import pyaudio  # grabación de audio
 import wave     # generación de archivo de audio
 import winsound  # producir sonido Beep de windows
 import time     # activar el sleep en segundos y (t/1000) para milisegundos
 import msvcrt   # para esperar ENTER para continuar
-
+import keyboard
 
 def REC_A():    # GRABACIÓN #####################################################
     # CONFIGURACIÓN DEL ARCHIVO DE GRABACIÓN
@@ -122,20 +122,28 @@ def REC_B():    # GRABACIÓN ###################################################
     print("Archivo outputB.wav generado.")
 
 
-
-
 # MAIN ###################principal############################################
 if __name__ == '__main__':
     # REC_A()
     # Whis()
-    h1 = threading.Thread(name="REC_A", target=REC_A)
-    h2 = threading.Thread(name="REC_A", target=REC_B)
-        
-    h1.start()
-    h2.start()
 
-    h1.join()
-    h2.join()
+    while True:
+
+        h1 = threading.Thread(name="REC_A", target=REC_A)
+        h2 = threading.Thread(name="REC_B", target=REC_B)
+            
+        h1.start()
+        h2.start()
+
+        h1.join()
+        h2.join()
+
+        print("Presione la tecla ""q"" para continuar...")
+        time.sleep(3)
+        if keyboard.is_pressed('q'):
+            break
+
+       
     
     print("Presione una tecla para continuar...")
     msvcrt.getch()
