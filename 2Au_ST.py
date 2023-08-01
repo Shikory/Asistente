@@ -5,9 +5,14 @@ import wave     # generación de archivo de audio
 import winsound  # producir sonido Beep de windows
 import time     # activar el sleep en segundos y (t/1000) para milisegundos
 import msvcrt   # para esperar ENTER para continuar
-import keyboard
+import keyboard # para utilizar las teclas del keyborad
+
+n = 1 # número de la grabación variable global
 
 def REC_A():    # GRABACIÓN #####################################################
+    
+    global n # comando para utlizar la variable global n desiganda para las grabaciones A
+
     # CONFIGURACIÓN DEL ARCHIVO DE GRABACIÓN
     FRAMES_PER_BUFFER = 3200
     FORMAT = pyaudio.paInt16
@@ -32,7 +37,7 @@ def REC_A():    # GRABACIÓN ###################################################
     fechaActual = datetime.datetime.now()
     fechaStrActual = datetime.datetime.strftime(
         fechaActual, '%d/%m/%Y %H:%M:%S')
-    print(fechaStrActual + " Grabando lado A.")
+    print(fechaStrActual + f" Grabando lado A número: {n}")
 
     seconds = 10    # tiempo de grabación en 10 segundos
     frames = []
@@ -52,16 +57,17 @@ def REC_A():    # GRABACIÓN ###################################################
     fechaActual = datetime.datetime.now()
     fechaStrActual = datetime.datetime.strftime(
         fechaActual, '%d/%m/%Y %H:%M:%S')
-    print(fechaStrActual + " Grabación lado A terminada.")
+    print(fechaStrActual + f" Grabación lado A numero: {n} terminada.")
 
     # GENERACION DE ARCHIVO DE AUDIO
-    obj = wave.open("outputA.wav", "wb")
+    obj = wave.open(f"outputA{n}.wav", "wb")
     obj.setnchannels(CHANNELS)
     obj.setsampwidth(p.get_sample_size(FORMAT))
     obj.setframerate(RATE)
     obj.writeframes(b"".join(frames))
     obj.close
-    print("Archivo outputA.wav generado.")
+    print(f"Archivo outputA_{n}.wav generado.")
+    n+=1 
 
 def REC_B():    # GRABACIÓN #####################################################
 
@@ -128,6 +134,7 @@ if __name__ == '__main__':
     # Whis()
 
     while True:
+        
 
         h1 = threading.Thread(name="REC_A", target=REC_A)
         h2 = threading.Thread(name="REC_B", target=REC_B)
@@ -138,7 +145,7 @@ if __name__ == '__main__':
         h1.join()
         h2.join()
 
-        print("Presione la tecla ""q"" para continuar...")
+        print("Presione la tecla ""q"" para detener el programa.")
         time.sleep(3)
         if keyboard.is_pressed('q'):
             break
