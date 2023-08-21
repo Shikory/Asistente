@@ -5,7 +5,7 @@ import wave     # generación de archivo de audio
 import whisper  # reconocimiento automatico de voz
 import winsound  # producir sonido Beep de windows
 import time     # activar el sleep
-import msvcrt   # para esperar ENTER para continuar
+
 # biblioteca de conversión de texto a voz en Python. A diferencia de las bibliotecas alternativas, funciona sin conexión y es compatible con Python 2 y 3.
 import pyttsx3
 
@@ -14,6 +14,8 @@ import pyttsx3
 nombre_archivo = 'Texto_captura.txt'
 # nombre de la variable que habla las transcripciones
 Oido = " "
+# nombre del asistente es kid
+name = 'kid'
 
 # editando configuración por defecto de la voz que repetira las instrucciones
 """engine = pyttsx3.init()
@@ -44,15 +46,13 @@ def REC_A():    # GRABACIÓN ###################################################
 
     # INICIANDO GRABACIÓN
     winsound.Beep(2000, 200)
-    time.sleep(100/1000)
-    winsound.Beep(2000, 200)
 
     fechaActual = datetime.datetime.now()
     fechaStrActual = datetime.datetime.strftime(
         fechaActual, '%d/%m/%Y %H:%M:%S')
     print(fechaStrActual + " Grabando...")
 
-    seconds = 10    # tiempo de grabación en 10 segundos
+    seconds = 3    # tiempo de grabación en 10 segundos
     frames = []
     for i in range(0, int(RATE/FRAMES_PER_BUFFER*seconds)):
         data = stream.read(FRAMES_PER_BUFFER)
@@ -63,8 +63,6 @@ def REC_A():    # GRABACIÓN ###################################################
     p.terminate
 
     # FINALIZANDO GRABACIÓN
-    winsound.Beep(500, 300)
-    time.sleep(100/1000)
     winsound.Beep(500, 300)
 
     fechaActual = datetime.datetime.now()
@@ -94,7 +92,7 @@ def Whis():  # WHISPER #########################################################
 
     print("Analizando audio output.wav")
     # SELECCIÓN DE MODELO small PARA RAPICO Y medium PARA PRESICION
-    model = whisper.load_model('medium')
+    model = whisper.load_model('small')
 
     Texto = model.transcribe("output.wav", language='Spanish', fp16=False)
 
@@ -122,8 +120,7 @@ def Whis():  # WHISPER #########################################################
 
 # MAIN ###################principal############################################
 if __name__ == '__main__':
-    # REC_A()
-    # Whis()
+
     h1 = threading.Thread(name="REC_A", target=REC_A)
     h2 = threading.Thread(name="Whisper", target=Whis)
 
@@ -132,6 +129,3 @@ if __name__ == '__main__':
 
     h1.join()
     h2.join()
-
-    print("Presione una tecla para continuar...")
-    msvcrt.getch()
