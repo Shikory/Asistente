@@ -1,0 +1,27 @@
+31/07/2023 17:42:02 A la rama con la cual nosotros estemos trabajando. Pero sin embargo la rama de Main no se encuentra creada en nuestro repositorio, en GitHub, por lo que nosotros tenemos indicarle que queremos crearla.
+31/07/2023 17:48:42 Voy a inventar todo esto y lo primero que tenemos que hacer es instanciar un objeto del hilo que queremos crear. Esto sería de la siguiente manera. Al primero le voy a llamar h1, el nombre del módulo.
+20/08/2023 16:17:20 1,2,3 probando, probando, probando audio, probando audio, vamos a ver si sale Otros servicios que permitan almacenar los códigos y esto finalmente vendría
+20/08/2023 16:55:29 está arriba del todo. Fijaos en cuanto se ha completado el primer ciclo de todos los siglos me ha mostrado el tiempo que ha tardado. Yo les explico por qué ha sucedido esto.
+20/08/2023 16:58:57 ...100 veces y recibe como argumento un color. Aquí dentro de un bucle for hacemos que se repita 100 veces. Guardamos en la variable hora la fecha y hora actual.
+20/08/2023 17:04:10 Ejecutas el programa y ejecutamos la función anterior 7 veces, cada vez de un color distinto. Una vez que acaban de ejecutarse todas las funciones, mostramos los segundos que ha tardado el programa.
+20/08/2023 17:12:31 Una vez acabado, vemos que ha tardado 10,8 segundos. Vamos a hacer un breve repaso de lo que ha pasado. Ha ejecutado esta función una vez que ha terminado esta función.
+20/08/2023 17:26:15 y un hilo distinto. Entonces voy a comentar todo esto y lo primero que tenemos que hacer es instanciar un objeto del hilo que queremos crear. Esto sería de la siguiente manera. Al primero le voy a llamar H1.
+20/08/2023 17:28:40 ...porque? Pues porque aquí indicamos que función queremos ejecutar en el hilo. En este caso, mostradora. Sin paréntesis vale simplemente el nombre de la función. Porque los arboles...
+20/08/2023 17:32:23 Función, solo recibe un argumento, que es color, pues como voy a hacerlo como antes, el primero va a ser de color verde. Así que le paso verde y acto seguido tengo que poner una coma.
+20/08/2023 17:39:11 en este caso una tupla de un solo valor que para que Python reconozca que efectivamente es una tupla debo añadir una comácina si tuviera más de un argumento por ejemplo así
+20/08/2023 17:44:39 Bien, con esto ya tendría creado mi primer objeto 3. Vamos a crear el resto y ya estarían creados. Como veis simplemente me dedicaba a copiar y pegar.
+20/08/2023 17:51:54 Entonces, ¿cómo podríamos hacer para que el programa principal esperara a que terminara la ejecución de todos los silos para continuar? Pues bien, esto se hace con otro método.
+20/08/2023 17:55:52 Vamos a comentar un poco el programa, que es lo que hay que hacer. Creamos los objetos, iniciamos los hilos y obligamos a que los hilos finalicen su ejecución para continuar. Si guardamos, ejecutamos.
+20/08/2023 18:03:34 1, 2, 3 y ligue para ITAN y bueno, si te fijas aquí se queda pausado o se queda en espera hasta que se reproduce todo
+20/08/2023 18:22:31 ¡SUSCRÍBETE!
+20/08/2023 18:31:15 Y ahora, vamos a ver un programa de Python. El programa principal se ejecuta en un hilo que se crea automáticamente. Y cada vez que se inicia un hilo, el sistema operativo le adjudica un hilo.
+20/08/2023 19:02:07 Hola
+20/08/2023 19:04:16 Iniciando con mando alerta máxima
+20/08/2023 19:15:46 weird
+20/08/2023 19:20:34 ¡Reporte del mundo!
+20/08/2023 19:21:49 computadora de reporte del mundo
+20/08/2023 19:22:57 ¡Computadora! ¡Reporte del mundo!
+20/08/2023 19:24:21 Computadora de Reporte del Mundo
+20/08/2023 19:24:57 ¡Computadora, reporte del mundo!
+20/08/2023 19:25:35 computadora como está el solo
+20/08/2023 19:26:17 computadora como esta el sol
